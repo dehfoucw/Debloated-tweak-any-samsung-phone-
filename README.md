@@ -1,5 +1,8 @@
 # Debloated&tweaks-SAMSUNG-PHONE
+
 ❗❗⚠️⚠️this script may cause the Loss of Warranty on your device ⚠️⚠️❗❗
+
+
 how to use :
 download this
 (https://github.com/dehfoucw/Debloated-tweak-any-samsung-phone-/archive/refs/heads/main.zip)
