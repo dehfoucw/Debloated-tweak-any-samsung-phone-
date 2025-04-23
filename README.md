@@ -1,4 +1,4 @@
-# Debloated-tweaks-any-SAMSUNG
+# Debloated&tweaks-SAMSUNG-PHONE
 how to use :
 download this zip file
 enable usb debuging on your phone
