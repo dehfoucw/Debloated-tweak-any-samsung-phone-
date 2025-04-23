@@ -1,10 +1,11 @@
-﻿@echo off
+@echo off
 CLS
 echo =================================
-echo        DEBLOATED – TWEAK
-echo                 FOR SAMSUNG
-echo           by dehfoucw@github 
+echo 	DEBLOATED and TWEAK
+echo	 FOR SAMSUNG
+echo 	by dehfoucw@github 
 echo =================================
+timeout /t 5
 adb devices
 adb shell
 
@@ -14,9 +15,13 @@ adb shell settings put global cached_apps_freezer enabled
 adb shell settings put global protect_battery 1
 adb shell settings put secure send_action_app_error 0
 
+timeout /t 1
+
 echo Location
 adb shell settings put global assisted_gps_enabled 1
 adb shell settings put global wifi_scan_always_enabled 1
+
+timeout /t 1
 
 echo Boost Performance
 adb shell settings put global animator_duration_scale 0.35
@@ -27,6 +32,8 @@ adb shell settings put global zram_enabled 0
 adb shell settings put global online_manual_url 0
 adb shell settings put global bug_report 0
 adb shell settings put global debug_app 0
+
+timeout /t 1
 
 echo Remove bloatware
 adb shell settings put secure game_auto_temperature_control 0
@@ -114,7 +121,6 @@ adb shell
  adb shell pm uninstall --user 0  -k --user 0 com com.google.android.googlequicksearchbox
  adb shell pm uninstall --user 0  -k --user 0 com com.google.android.music
  adb shell pm uninstall --user 0  -k --user 0 com com.google.android.videos
- adb shell pm uninstall --user 0  -k --user 0 com com.google.android.youtube
  adb shell pm uninstall --user 0  -k --user 0 com com.google.ar.core
  adb shell pm uninstall --user 0  -k --user 0 com com.google.vr.vrcore
  adb shell pm uninstall --user 0  -k --user 0 com com.microsoft.office.officehubrow
@@ -179,7 +185,9 @@ adb shell
  adb shell pm uninstall --user 0  -k --user 0 com com.wsomacp
  adb shell pm uninstall --user 0  -k --user 0 com flipboard.boxer.app
 
+timeout /t 1
+
 echo Killing adb server
 adb kill-server
 echo Press any key to exit terminal.
-exitexit
+
