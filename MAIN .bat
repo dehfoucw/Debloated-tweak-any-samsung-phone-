@@ -182,3 +182,4 @@ adb shell
 echo Killing adb server
 adb kill-server
 echo Press any key to exit terminal.
+exitexit
