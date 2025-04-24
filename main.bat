@@ -229,6 +229,9 @@ echo Disabling Game Optimizing Service...
 adb shell pm disable-user --user 0 com.samsung.android.game.gos
 adb shell pm clear --user 0 com.samsung.android.game.gos
 
-echo.
+echo. 
+echo reboot your Samsung device!
+
+echo. 
 echo All done. Enjoy your clean and optimized Samsung device!
 pause
