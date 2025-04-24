@@ -1,7 +1,7 @@
 # Debloated&tweaks-SAMSUNG-PHONE
 
 ❗❗⚠️⚠️this script may cause the Loss of Warranty on your device ⚠️⚠️❗❗
-
+plz dont care about virus on this file
 
 # step 1 :how to use 
 
