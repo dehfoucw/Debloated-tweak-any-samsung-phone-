@@ -30,22 +30,22 @@ for /f "tokens=1,2" %%a in ('adb devices') do (
     )
 )
 
-echo.
-echo Removing bloatware...
+
+
+
+@echo off
+echo --------------------------------------
+echo removing bloatware...
 adb devices
-#adb shell pm uninstall --user 0 com.android.emergency
-#adb shell pm uninstall --user 0 com.google.android.gms.location.history
-#adb shell pm uninstall --user 0 com.samsung.android.mdx.kit
-#adb shell pm uninstall --user 0 com.samsung.android.mdx.quickboard
-#adb shell pm uninstall --user 0 com.samsung.android.samsungpositioning
-#adb shell pm uninstall --user 0 com.samsung.android.smartmirroring                   #Removing it breaks Video Player
-#adb shell pm uninstall --user 0 com.sec.android.emergencymode.service
-#adb shell pm uninstall --user 0 com.sec.android.provider.emergencymode
-#adb shell pm uninstall --user 0 com.sec.unifiedwfc                                   #WiFi calling app
+adb shell pm uninstall --user 0 com.android.emergency
+adb shell pm uninstall --user 0 com.google.android.gms.location.history
+adb shell pm uninstall --user 0 com.samsung.android.mdx.kit
+adb shell pm uninstall --user 0 com.samsung.android.mdx.quickboard
+adb shell pm uninstall --user 0 com.samsung.android.samsungpositioning
+adb shell pm uninstall --user 0 com.sec.android.emergencymode.service
 adb shell pm uninstall --user 0 android.autoinstalls.config.samsung
 adb shell pm uninstall --user 0 com.android.bips
 adb shell pm uninstall --user 0 com.android.bookmarkprovider
-adb shell pm uninstall --user 0 com.android.chrome
 adb shell pm uninstall --user 0 com.android.cts.ctsshim
 adb shell pm uninstall --user 0 com.android.cts.priv.ctsshim
 adb shell pm uninstall --user 0 com.android.hotwordenrollment.okgoogle
@@ -58,10 +58,6 @@ adb shell pm uninstall --user 0 com.android.stk
 adb shell pm uninstall --user 0 com.android.stk2
 adb shell pm uninstall --user 0 com.android.traceur
 adb shell pm uninstall --user 0 com.aura.oobe.samsung
-adb shell pm uninstall --user 0 com.facebook.appmanager
-adb shell pm uninstall --user 0 com.facebook.katana
-adb shell pm uninstall --user 0 com.facebook.services
-adb shell pm uninstall --user 0 com.facebook.system
 adb shell pm uninstall --user 0 com.google.android.apps.carrier.carrierwifi
 adb shell pm uninstall --user 0 com.google.android.apps.messaging
 adb shell pm uninstall --user 0 com.google.android.apps.restore
@@ -205,7 +201,11 @@ adb shell pm uninstall --user 0 com.sec.location.nsflp2
 adb shell pm uninstall --user 0 com.sec.mhs.smarttethering
 adb shell pm uninstall --user 0 com.sec.spp.push
 adb shell pm uninstall --user 0 com.snap.camerakit.plugin.v1
-echo.
+
+
+echo DONE!--------------------------------------------------
+timeout /t 2 >nul
+
 echo Applying battery and performance tweaks...
 
 adb shell settings put global adaptive_battery_management_enabled 0
@@ -224,10 +224,24 @@ adb shell settings put global bug_report 0
 adb shell settings put global debug_app 0
 adb shell settings put secure game_auto_temperature_control 0
 
+echo DONE!--------------------------------------------------
+timeout /t 2 >nul
+
 echo.
 echo Disabling Game Optimizing Service...
 adb shell pm disable-user --user 0 com.samsung.android.game.gos
 adb shell pm clear --user 0 com.samsung.android.game.gos
+
+echo DONE!--------------------------------------------------
+timeout /t 2 >nul
+
+
+echo apply change...
+adb reboot
+
+
+echo DONE!--------------------------------------------------
+timeout /t 2 >nul
 
 echo. 
 echo reboot your Samsung device!
